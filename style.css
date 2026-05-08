@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
 }
@@ -55,5 +55,266 @@ body {
 .resposta input {
     height: 20px;
     width: 300px;
+}*/
+
+/* {
+    margin 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4ead9;
+    color: #222;
+}
+
+.jogo {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.principal {
+   display: flex;
+   align-items: flex-start;
+   gap: 30px; 
+}
+
+/*Painel Lateral*/
+/*.tabela {
+    width: 160px;
+    padding: 18px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Área principal*/
+/*.questao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;    
+}
+
+.questao h3 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.questao p {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+/* Resposta */
+/*.resposta {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.resposta form {
+    display: flex;
+    gap: 10px;
+}
+
+.resposta input {
+    width: 250px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.resposta button {
+    padding: 0 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #1d4ed8;
+    color: white;
+}
+
+/* Cartas */
+/*.cartas {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    min-height: 120px;
+}
+
+.carta {
+    width: 90px;
+    height: 120px;
+    border-radius: 12px;
+    border: 2px dashed rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.35);
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111827;
+    color: #f9fafb;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.jogo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.jogo h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+/* área principal */
+.principal {
+    max-width: 1350px;
+    margin: 0 auto;
+    background: #1f2937;
+    border-radius: 18px;
+    padding: 60px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* topo */
+.top {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* painel lateral */
+.tabela {
+    width: 180px;
+    background: #111827;
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* centro */
+.questao-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* questão */
+.questao {
+    background: #111827;
+    border-radius: 14px;
+    padding: 45px;
+    min-height: 160px;
+}
+
+.questao h3 {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+.questao p {
+    text-align: center;
+    line-height: 1.7;
+    font-size: 17px;
+    color: #d1d5db;
+}
+
+/* resposta */
+.resposta {
+    display: flex;
+    justify-content: center;
+    margin-top: 24;
+}
+
+.resposta form {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.resposta input {
+    flex: 1;
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 16px;
+    background: #374151;
+    color: white;
+}
+
+.resposta input::placeholder {
+    color: #cbd5e1;
+}
+
+.resposta button {
+    border: none;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #8b5cf6;
+    color: white;
+    transition: 0.2s;
+}
+
+.resposta button:hover {
+    transform: translateY(-1px);
+}
+
+/* cartas */
+.cartas {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.carta {
+    width: 145px;
+    height: 210px;
+    border-radius: 14px;
+    background: #111827;
+    border: 2px dashed #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.carta:hover {
+    transform: translateY(-4px);
+    border-color: #8b5cf6;
+}
