@@ -12,8 +12,8 @@
         <div class="principal">
             <div class="top">
                 <div class="questao">
-                    <h3>Questão 1:</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eaque, fugiat natus quo dicta itaque illum, deserunt distinctio atque labore libero eos aut, officiis quod rem inventore aperiam eveniet iste?</p>
+                    <h3 id="tituloQuestao">Questão 1:</h3>
+                    <p id="pergunta"></p>
                 </div>
                 <div class="tabela">
                     <span>Pontos: <span id="score">0</span></span>
@@ -22,9 +22,9 @@
                 </div>
             </div>
             <div class="resposta">
-                <form>
-                    <input type="number" placeholder="Resposta">
-                    <button>Enviar</button>
+                <form id="formResposta">
+                    <input type="number" id="respostaInput" placeholder="Resposta">
+                    <button type="submit">Enviar</button>
                 </form>
             </div>
             <div class="cartas">
@@ -33,5 +33,6 @@
                 <div class="carta">?</div>
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
