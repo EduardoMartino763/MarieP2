@@ -305,6 +305,12 @@ body {
     gap: 35px;
 }
 
+.carta:hover {
+    transform: translateY(-15px);
+    transform: rotate(5deg);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
+}
+
 .carta {
     width: 145px;
     height: 210px;
@@ -317,6 +323,21 @@ body {
     font-size: 22px;
     font-weight: bold;
     transition: 0.2s;
+
+    /*width: 100px;
+    height: 150px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e2329;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;*/
 }
 
 .carta:hover {

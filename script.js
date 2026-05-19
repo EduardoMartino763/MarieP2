@@ -39,6 +39,7 @@ function tempoEsgotado() {
 atualizarTempo();
 iniciarCronometro();
 
+
 //Perguntas
 
 const questoes = [
