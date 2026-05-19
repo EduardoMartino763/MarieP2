@@ -63,3 +63,50 @@ const questoes = [
         resposta: 1728
     },
 ];
+
+let indiceAtual = 0;
+
+const titulo = document.getElementById("tituloQuestao");
+const texto = document.getElementById("pergunta");
+const inputResposta = document.getElementById("respostaInput");
+
+function mostrarQuestao() {
+
+    if (indiceAtual < questoes.length) {
+
+        titulo.innerText = `Questão ${indiceAtual + 1}`;
+        texto.innerText = questoes[indiceAtual].pergunta;
+    } else {
+        titulo.innerText = "Fim do Quiz";
+        texto.innerText = "Você respondeu todas as questões.";
+
+        document.querySelector(".resposta").style.display = "none";
+    }
+
+}
+
+//Função para verificar se a resposta está correta
+
+function verificarResposta() {
+    const respostaUsuario = questoes[indiceAtual].resposta;
+
+    if (respostaUsuario === respostaCorreta) {
+
+        alert("Resposta Correta!");
+
+        indiceAtual++;
+
+        inputResposta.value = "";
+
+        mostrarQuestao();
+    } else {
+
+        alert("Resposta incorreta!");
+
+        indiceAtual++;
+
+        inputResposta.value = "";
+
+        mostrarQuestao();
+    }
+}
