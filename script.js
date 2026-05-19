@@ -49,7 +49,7 @@ const questoes = [
 
     {
         pergunta: "Se três canetas custam R$12,60, quanto custaria apenas uma caneta?",
-        resposta: 4,20
+        resposta: 4.20
     },
 
     {
@@ -59,6 +59,6 @@ const questoes = [
 
     {
         pergunta: "Quanto é 12 elevado a 3 (12³)",
-        resposta: 17289
+        resposta: 1728
     },
 ];
