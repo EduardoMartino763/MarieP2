@@ -24,13 +24,23 @@
             <div class="resposta">
                 <form id="formResposta">
                     <input type="number" id="respostaInput" placeholder="Resposta">
-                    <button type="submit">Enviar</button>
+                    <button type="button" onclick="verificarResposta()">Enviar</button>
                 </form>
             </div>
             <div class="cartas">
-                <div class="carta">?</div>
-                <div class="carta">?</div>
-                <div class="carta">?</div>
+                <div class="carta" id="btnDica" onclick="usarDica()">
+                    Carta Dica
+                </div>
+                <div class="carta" id="btnMult" onclick="usarMult()">
+                    Carta Calculadora
+                </div>
+                <div class="carta" id="btnSkip" onclick="usarPular()">
+                    Carta Pular
+                </div>
+            </div>
+            <div id="dica"></div>
+            <div id="Escolhas" style="display: none; margin-top:10px;">
+                <input type="number">
             </div>
         </div>
         <script src="script.js"></script>

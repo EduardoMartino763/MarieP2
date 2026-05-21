@@ -2,7 +2,7 @@
 
 const tempoE1 = document.getElementById("tempo");
 
-let tempo = 120;
+let tempo = 30000;
 let cronometro = null;
 
 function atualizarTempo() {
@@ -45,22 +45,30 @@ iniciarCronometro();
 const questoes = [
     {
         pergunta: "Um produto custa R$ 80 e recebe um desconto de 15%. Qual é o valor do desconto em reais?",
-        resposta: 12
+        resposta: 12,
+        dica: "A resposta está entre 10 e 15",
+        alternativas: [10, 12, 30, 46]
     },
 
     {
         pergunta: "Se três canetas custam R$12,60, quanto custaria apenas uma caneta?",
-        resposta: 4.20
+        resposta: 4.20,
+        dica: "Divisão",
+        alternativas: [4.20, 2.60, 5.0, 4.0]
     },
 
     {
         pergunta: "Qual é o resultado da expressão: 15 - 3 * 4 + 2?",
-        resposta: 5
+        resposta: 5,
+        dica: "Inicie pela Multiplicação e depois some com o resultado da subtração",
+        alternativas: [5, 9, 3, 10]
     },
 
     {
         pergunta: "Quanto é 12 elevado a 3 (12³)",
-        resposta: 1728
+        resposta: 1728,
+        dica: "12 elevado a 3 seria 12 vezes ele mesmo 3 vezes (12 * 12 * 12)",
+        alternativas: [942, 1975, 1728, 643]
     },
 ];
 
@@ -88,25 +96,44 @@ function mostrarQuestao() {
 //Função para verificar se a resposta está correta
 
 function verificarResposta() {
-    const respostaUsuario = questoes[indiceAtual].resposta;
+
+    const respostaUsuario = Number(inputResposta.value);
+
+    const respostaCorreta = questoes[indiceAtual].resposta;
 
     if (respostaUsuario === respostaCorreta) {
 
         alert("Resposta Correta!");
 
-        indiceAtual++;
-
-        inputResposta.value = "";
-
-        mostrarQuestao();
     } else {
 
         alert("Resposta incorreta!");
 
-        indiceAtual++;
+    }
+
+    indiceAtual++;
 
         inputResposta.value = "";
 
         mostrarQuestao();
+}
+
+mostrarQuestao();
+
+let cartaDicaUsada = false;
+let cartaMultUsada = false;
+let cartaPularUsada = false;
+
+function usarDica() {
+    if (cartaDicaUsada) {
+        alert("Você já usou esta carta!");
+        return;
     }
+
+    cartaDicaUsada = true;
+
+    document.getElementById("dica").innerText =
+        questoes[indiceAtual].dica;
+
+    document.getElementById("btnDica").disabled = true;
 }
