@@ -79,8 +79,11 @@ const texto = document.getElementById("pergunta");
 const inputResposta = document.getElementById("respostaInput");
 
 function mostrarQuestao() {
-
+    
+    
     if (indiceAtual < questoes.length) {
+        
+        document.getElementById("DicaPergunta").innerText = "";
 
         titulo.innerText = `Questão ${indiceAtual + 1}`;
         texto.innerText = questoes[indiceAtual].pergunta;
@@ -132,8 +135,79 @@ function usarDica() {
 
     cartaDicaUsada = true;
 
-    document.getElementById("dica").innerText =
+    document.getElementById("DicaPergunta").innerText =
         questoes[indiceAtual].dica;
 
     document.getElementById("btnDica").disabled = true;
+    
+    document.getElementById("btnDica").classList.add("usada");
+    
+}
+
+function usarPular() {
+    
+    if (cartaPularUsada) {
+        alert("Você já usou esta carta!");
+        return;
+    }
+    
+    cartaPularUsada = true;
+    
+    indiceAtual++;
+    
+    document.getElementById("DicaPergunta").innerText = "";
+    
+    mostrarQuestao();
+    
+    document.getElementById("btnSkip").classList.add("usada");
+    
+    document.getElementById("btnSkip").disabled = true;
+}
+
+function usarMult() {
+    
+    if (cartaMultUsada) {
+        alert("Você já usou esta carta!");
+        return;
+    }
+    
+    cartaMultUsada = true;
+    
+    const alternativas = questoes[indiceAtual].alternativas;
+
+    const div = document.getElementById("alternativas");
+
+    div.innerHTML = "";
+
+    for (let i = 0; i < alternativas.length; i++) {
+        const botao = document.createElement("button");
+
+        botao.innerText = alternativas[i];
+
+        botao.onclick = function() {
+            verificarRespostaMultipla(alternativas[i]);
+        };
+
+        div.appendChild(botao);
+    }
+
+    document.getElementById("btnMult").classList.add("usada");
+    
+    document.getElementById("btnMult").disabled = true;
+}
+
+function verificarRespostaMultipla(respostaEscolhida) {
+    const respostaCorreta = questoes[indiceAtual].resposta;
+
+    if (respostaEscolhida === respostaCorreta) {
+        alert("Correto!");
+    } else {
+        alert("Errado!");
+    }
+
+    indiceAtual++;
+
+    document.getElementById("alternativas").innerHTML = "";
+
+    mostrarQuestao();
 }
