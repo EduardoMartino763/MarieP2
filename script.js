@@ -76,7 +76,7 @@ const questoes = [
         resposta: 90,
         dica: "Calcule 25% de 120 e subtraia do valor original",
         alternativas: [90, 95, 30, 85]
-    }
+    },
 
     // Nível 2
 
@@ -109,7 +109,7 @@ const questoes = [
         resposta: 2,
         dica: "Some as frações de trabalho por hora: 1/6 + 1/3",
         alternativas: [2, 3, 4, 4.5]
-    }
+    },
 
     // Nível 3
 
