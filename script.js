@@ -106,7 +106,13 @@ function verificarResposta() {
 
     if (respostaUsuario === respostaCorreta) {
 
-        alert("Resposta Correta!");
+        let pontosGanhos = pontuacao_dica ? 50 : 100;
+
+        pontuacao += pontosGanhos;
+
+        atualizarPontuacao();
+
+        alert(`Resposta Correta! +${pontosGanhos} pontos`);
 
     } else {
 
@@ -117,6 +123,8 @@ function verificarResposta() {
     indiceAtual++;
 
         inputResposta.value = "";
+
+        pontuacao_dica = false;
 
         mostrarQuestao();
 }
@@ -134,6 +142,8 @@ function usarDica() {
     }
 
     cartaDicaUsada = true;
+
+    pontuacao_dica = true;
 
     document.getElementById("DicaPergunta").innerText =
         questoes[indiceAtual].dica;
@@ -200,6 +210,11 @@ function verificarRespostaMultipla(respostaEscolhida) {
     const respostaCorreta = questoes[indiceAtual].resposta;
 
     if (respostaEscolhida === respostaCorreta) {
+
+        pontuacao += 50;
+
+        atualizarPontuacao();
+
         alert("Correto!");
     } else {
         alert("Errado!");
@@ -210,4 +225,15 @@ function verificarRespostaMultipla(respostaEscolhida) {
     document.getElementById("alternativas").innerHTML = "";
 
     mostrarQuestao();
+}
+
+//Pontuação
+
+let pontuacao = 0;
+
+let pontuacao_dica = false;
+
+function atualizarPontuacao() {
+    document.getElementById("score").innerText =
+        `${pontuacao}`;
 }
