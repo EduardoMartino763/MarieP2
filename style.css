@@ -192,7 +192,7 @@ body {
 /* área principal */
 .principal {
     max-width: 1350px;
-    margin: 40 auto;
+    margin:  auto;
     background: #1f2937;
     border-radius: 18px;
     padding: 40px;
