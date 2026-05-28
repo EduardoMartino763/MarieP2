@@ -1,3 +1,7 @@
+<?php 
+session_start();
+$nome = htmlspecialchars($_POST['nome']) ; 
+?>
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 
@@ -10,15 +14,25 @@
     <title>Iniciar Sessão</title>
 </head>
 
-<body class="d-flex align-items-center py4 bg-body-tertiary">
-    <main class="w-100 m-auto form-container">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Bem-vindo ao MathCard!</h5>
+<body class="d-flex justify-content-center align-items-center bg-body-tertiary col-12">
+    <main class="form-container">
+        <div class="card p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end"
+            style="width: 40rem; ">
+            <div class="card-body text-center">
+                <h1 class="card-title">Bem-vindo ao MathCard
+                    <?php echo $nome; ?>
+                </h1>
+
                 <p class="card-text">
-                    Entre em uma batalha matemática cheia de desafios, estratégia e raciocínio rápido. Acha que domina
-                    os números? Prove isso — mas cuidado, este jogo pode te deixar de cabelos brancos!</p>
-                <a href="jogo.html" class="btn btn-primary">Go somewhere</a>
+                    Entre em uma batalha matemática cheia de desafios,
+                    estratégia e raciocínio rápido. Acha que domina
+                    os números? Prove isso — mas cuidado, este jogo
+                    pode te deixar de cabelos brancos!
+                </p>
+
+                <a href="jogo.php" class="btn btn-primary">
+                    Clique aqui quando estiver pronto para o desafio!
+                </a>
             </div>
         </div>
     </main>
