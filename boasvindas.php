@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$nome = htmlspecialchars($_POST['nome']) ; 
+$_SESSION['nome'] = ($_POST['nome']) ; 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
@@ -20,7 +20,7 @@ $nome = htmlspecialchars($_POST['nome']) ;
             style="width: 40rem; ">
             <div class="card-body text-center">
                 <h1 class="card-title">Bem-vindo ao MathCard
-                    <?php echo $nome; ?>
+                    <?php echo $_SESSION['nome']; ?>
                 </h1>
 
                 <p class="card-text">

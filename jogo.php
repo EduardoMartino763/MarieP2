@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $nome = htmlspecialchars($_POST['nome']) ;
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,12 +9,17 @@
     <meta charset="utf-8">
     <title>MathCard</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
     <header class="jogo">
         <h1>MathCard</h1>
-        <p>Jogador: <?= $nome; ?>!</p>
+        <p>Jogador:
+            <?php echo $_SESSION['nome'] ?? 'Visitante'; ?>!
+        </p>
     </header>
     <div class="principal">
         <div class="top">
