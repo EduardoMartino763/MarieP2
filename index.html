@@ -1,50 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>MathCard</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header class="jogo">
-            <h1>MathCard</h1>
-        </header>
-        <div class="principal">
-            <div class="top">
-                <div class="questao">
-                    <h3 id="tituloQuestao" class="TituloQuest">Questão 1:</h3>
-                    <p id="pergunta" class="pergunta"></p>
-                    <p id="DicaPergunta" class="dica" style="color: gray;"></p>
-                    <div id="alternativas"></div>
+<html lang="pt-br" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="boot.css">
+    <title>Iniciar Sessão</title>
+</head>
+
+<body class="d-flex align-items-center py4 bg-body-tertiary">
+    <main class="w-100 m-auto form-container">
+        <div class="container">
+            <h1>Digite seu nome</h1>
+            <form action="boasvindas.php" method="POST">
+                <div class="mb-3">
+                    <label for="nome" name="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
                 </div>
-                <div class="tabela">
-                    <span>Pontos: <span id="score">0</span></span>
-                    <span>Tempo: <span id="tempo">30</span></span>
-                    <span>Nível: <span id="nivel">Iniciante</span></span>
-                </div>
-            </div>
-            <div class="resposta">
-                <form id="formResposta">
-                    <input type="number" id="respostaInput" placeholder="Resposta">
-                    <button type="button" onclick="verificarResposta()">Enviar</button>
-                </form>
-            </div>
-            <div class="cartas">
-                <div class="carta" id="btnDica" onclick="usarDica()">
-                    Dica
-                </div>
-                <div class="carta" id="btnMult" onclick="usarMult()">
-                    MultiEscolha
-                </div>
-                <div class="carta" id="btnSkip" onclick="usarPular()">
-                    Pular
-                </div>
-            </div>
-            <div id="dica"></div>
-            <div id="Escolhas" style="display: none; margin-top:10px;">
-                <input type="number">
-            </div>
+
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
         </div>
-        <script src="script.js"></script>
-    </body>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
