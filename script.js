@@ -4,6 +4,7 @@ const tempoE1 = document.getElementById("tempo");
 
 let tempo = 30000;
 let cronometro = null;
+let nivel = "Iniciante";
 
 function atualizarTempo() {
     tempoE1.textContent = tempo;
@@ -154,13 +155,15 @@ const inputResposta = document.getElementById("respostaInput");
 
 function mostrarQuestao() {
     
-    
+    atualizarNivel();
+
     if (indiceAtual < questoes.length) {
         
         document.getElementById("DicaPergunta").innerText = "";
 
         titulo.innerText = `Questão ${indiceAtual + 1}`;
         texto.innerText = questoes[indiceAtual].pergunta;
+
     } else {
         titulo.innerText = "Fim do Quiz";
         texto.innerText = "Você respondeu todas as questões.";
@@ -180,7 +183,13 @@ function verificarResposta() {
 
     if (respostaUsuario === respostaCorreta) {
 
-        alert("Resposta Correta!");
+        let pontosGanhos = pontuacao_dica ? 50 : 100;
+
+        pontuacao += pontosGanhos;
+
+        atualizarPontuacao();
+
+        alert(`Resposta Correta! +${pontosGanhos} pontos`);
 
     } else {
 
@@ -191,6 +200,8 @@ function verificarResposta() {
     indiceAtual++;
 
         inputResposta.value = "";
+
+        pontuacao_dica = false;
 
         mostrarQuestao();
 }
@@ -208,6 +219,8 @@ function usarDica() {
     }
 
     cartaDicaUsada = true;
+
+    pontuacao_dica = true;
 
     document.getElementById("DicaPergunta").innerText =
         questoes[indiceAtual].dica;
@@ -274,6 +287,11 @@ function verificarRespostaMultipla(respostaEscolhida) {
     const respostaCorreta = questoes[indiceAtual].resposta;
 
     if (respostaEscolhida === respostaCorreta) {
+
+        pontuacao += 50;
+
+        atualizarPontuacao();
+
         alert("Correto!");
     } else {
         alert("Errado!");
@@ -284,4 +302,35 @@ function verificarRespostaMultipla(respostaEscolhida) {
     document.getElementById("alternativas").innerHTML = "";
 
     mostrarQuestao();
+}
+
+//Pontuação
+
+let pontuacao = 0;
+
+let pontuacao_dica = false;
+
+function atualizarPontuacao() {
+    document.getElementById("score").innerText =
+        `${pontuacao}`;
+}
+
+
+function atualizarNivel() {
+
+    if (indiceAtual >= 10) {
+
+        nivel = "Avançado";
+
+    } else if (indiceAtual >= 5) {
+
+        nivel = "Intermediário";
+
+    } else {
+
+        nivel = "Iniciante";
+
+    }
+
+    document.getElementById("nivel").innerText = nivel;
 }
